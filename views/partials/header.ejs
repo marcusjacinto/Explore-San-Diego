@@ -1,0 +1,86 @@
+<!Doctype html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta http=equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="viewport" content="width-device-width", initial-scale-1.8">
+      <title>San Diego Experience</title>
+      <link rel="icon" href="https://i.imgur.com/3pSCuTI.png">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="/stylesheets/main.css">
+    </head>
+    <body>
+
+<nav class="navbar fixed-top navbar-expand-md navbar-dark">
+  <a class="navbar-brand" href="https://www.sandiego.org/explore/things-to-do.aspx">San Diego</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+        <% if(!currentUser){ %>
+        <li class="nav-item">
+          <a class="nav-link dropdown-item" href="/campgrounds">Main</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link dropdown-item" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link dropdown-item" href="/register">Sign up</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item">
+          <a class="nav-link dropdown-item text right" href="/logout">Logout</a>
+        </li>
+        <% } %>
+    </ul>
+  </div>
+</nav>
+
+<!--<body>-->
+<!--  <main class="main">-->
+<!--    <nav class="navbar fixed-top navbar-dark">-->
+<!--      <ul class="navbar list">-->
+<!--        <li>-->
+<!--          <a class="navbar-brand" href="https://www.sandiego.org/explore/things-to-do.aspx">Explore San Diego</a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <button class= "button" data-js="open sidebar" data-theme="button">Open Sidebar</button>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </nav>-->
+<!--    <aside class="sidebar" data-js="sidebar">-->
+<!--      <ul class="sidebar__ul">-->
+<!--        <li>-->
+<!--          <a "href="/campgrounds">Main</a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <a href="/login">Login</a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <a href="/register">Sign up</a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <a>Placeholder</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--      <div class="sidebar__click-catcher" data-js="sidebar-click-catcher"></div>-->
+<!--    </aside>-->
+<!--  </main>-->
+<!--</body>-->
+
+
+
+<div class="container">
+  <% if(error && error.length > 0){ %>
+    <div class="alert alert-danger" role="alert">
+        <%= error %>
+    </div>
+  <% } %>
+  <% if(error && success.length > 0){ %>
+    <div class="alert alert-success" role="alert">
+        <%= success %>
+    </div>
+  <% } %>
+</div>
